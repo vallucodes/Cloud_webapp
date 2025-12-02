@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Random Number App</title>
+</head>
+<body>
+    <button id="btn">Get random Number</button>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("btn").addEventListener("click", async () => {
+            const response = await fetch("/random");
+            const data = await response.json();
+            document.getElementById("result").textContent = data.number;
+        });
+    </script>
+</body>
+</html>
